@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: inherit; /* use the modern site font from Main.css */
+  background: #fafafa;
+  color: #333;
+}
+
+.contact-banner {
+  text-align: center;
+  padding: 60px 20px;
+  background: url('Images/contact.avif') center/cover no-repeat;
+  color: #000000;
+}
+
+.contact-banner h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.contact-banner p {
+  font-size: 18px;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 40px;
+  background: #fff;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form h2 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #45a049;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h2 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.map iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+nav a {
+  font-weight: 500;
+  opacity: 0.9;
+  text-decoration: none !important; /* force remove underline */
+  color: var(--ink);
+}

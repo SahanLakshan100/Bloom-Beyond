@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flora Store | Gift Hampers</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="GiftHampers.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#">
+          <img src="Images/Beige Elegant and Beauty Flower Store Logo.png" alt="New Logo" style="width: 60px; height: 60px; border-radius:50%" />
+          <span>Bloom & Beyond</span>
+        </a>
+        <nav aria-label="Main Navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Flowers.html">Flowers</a></li>
+            <li><a href="Cakes.html">Cakes</a></li>
+            <li><a href="AboutUs.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+          <div class="actions">
+  <a href="Cart.html" class="btn" id="cartBtn" aria-label="Open Cart" style="display:inline-flex;align-items:center;gap:8px">
+    <img src="Images/shopping-cart-white-icon.png" alt="Cart" style="width:24px; height:24px;">
+  </a>
+      </div>
+    </header>
+
+  <section class="shop-banner container">
+    <h1>Our Gift Hampers Collection</h1>
+    <p>Beautiful Gift Hampers for every occasion</p>
+  </section>
+
+  <section class="product-grid container">
+    <div class="product-card">
+      <img src="Images/gift new 2.jpg" alt="Spark & Sweet">
+      <h3>Spark & Sweet</h3>
+      <p>Rs 9000</p>
+      <button class="add-to-cart" data-name="Spark & Sweet" data-price="Rs 9000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/IMG-20250831-WA0089.jpg" alt="Luxe Delights">
+      <h3>Luxe Delights</h3>
+      <p>Rs 8000</p>
+      <button class="add-to-cart" data-name="Luxe Delights" data-price="Rs 8000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/gift new 1.jpg" alt="Cocoa Bliss">
+      <h3>Cocoa Bliss</h3>
+      <p>Rs 12000</p>
+      <button class="add-to-cart" data-name="Cocoa Bliss" data-price="Rs 12000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/gift new 3.jpg" alt="Bloom care">
+      <h3>Bloom care</h3>
+      <p>Rs 18000</p>
+      <button class="add-to-cart" data-name="Bloom care" data-price="Rs 18000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/IMG-20250831-WA0094.jpg" alt="Gilded Treats">
+      <h3>Gilded Treats</h3>
+      <p>Rs 10000</p>
+      <button class="add-to-cart" data-name="Gilded Treats" data-price="Rs 10000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/IMG-20250831-WA0095.jpg" alt="The Splendid Basket">
+      <h3>The Splendid Basket</h3>
+      <p>Rs 8000</p>
+      <button class="add-to-cart" data-name="The Splendid Basket" data-price="Rs 8000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/IMG-20250831-WA0096.jpg" alt="Pearl of Happiness">
+      <h3>Pearl of Happiness</h3>
+      <p>Rs 8000</p>
+      <button class="add-to-cart" data-name="Pearl of Happiness" data-price="Rs 8000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/IMG-20250831-WA0097.jpg" alt="Treasures of Joy">
+      <h3>Treasures of Joy</h3>
+      <p>Rs 8000</p>
+      <button class="add-to-cart" data-name="Treasures of Joy" data-price="Rs 8000">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bloom & Beyond. All Rights Reserved.</p>
+  </footer>
+  <script>
+  // Debug: log number of product cards found
+  console.log('GiftHampers - product cards:', document.querySelectorAll('.product-card').length);
+    // Cart logic using localStorage
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart') || '[]');
+    }
+    function setCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    function cleanPrice(p) {
+      if (typeof p === 'number') return p;
+      if (!p) return 0;
+      const cleaned = String(p).replace(/[^0-9.]/g, '');
+      return cleaned ? Number(cleaned) : 0;
+    }
+
+    function addToCart(name, price) {
+      let cart = getCart();
+      const numericPrice = cleanPrice(price);
+      const idx = cart.findIndex(item => item.name === name);
+      if (idx > -1) {
+        cart[idx].quantity += 1;
+      } else {
+        cart.push({ name, price: numericPrice, quantity: 1 });
+      }
+      setCart(cart);
+      alert('Added to cart!');
+    }
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', function() {
+        addToCart(this.dataset.name, this.dataset.price);
+      });
+    });
+  </script>
+  </body>
+</html>
+

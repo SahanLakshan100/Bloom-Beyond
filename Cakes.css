@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(1.2) blur(6px);
+  background: rgba(250, 249, 247, 0.7);
+  border-bottom: 1px solid rgba(31, 41, 55, 0.06);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.brand-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+nav ul {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a { font-weight: 500; opacity: 0.9; }
+nav a:hover { opacity: 1; }
+.actions { display: flex; gap: 10px; align-items: center; }
+
+.shop-banner {
+  text-align: center;
+  padding: 60px 20px;
+  background: url('Images/Cakes\ new\ new.png') center/cover no-repeat;
+  color: #000000;
+}
+
+.shop-banner h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.shop-banner p {
+  font-size: 18px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 60px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+}
+
+.product-card p {
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.product-card button {
+  padding: 10px 20px;
+  border: none;
+  background: #4CAF50;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.product-card button:hover {
+  background: #45a049;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+nav a {
+  font-weight: 500;
+  opacity: 0.9;
+  text-decoration: none !important; /* force remove underline */
+  color: var(--ink);
+}

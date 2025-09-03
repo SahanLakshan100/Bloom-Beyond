@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom & Beyond | Cart</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="Cart.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="Main.html">
+        <img src="Images/Beige Elegant and Beauty Flower Store Logo.png" alt="New Logo" class="logo"/>
+        <span>Bloom & Beyond</span>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Flowers.html">Flowers</a></li>
+          <li><a href="Cakes.html">Cakes</a></li>
+          <li><a href="GiftHampers.html">Gift Hampers</a></li>
+          <li><a href="AboutUs.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="cart-container">
+    <h1>Your Shopping Cart</h1>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- Items will be added here dynamically -->
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <h2>Order Summary</h2>
+      <p>Subtotal: Rs <span id="subtotal">0</span></p>
+      <h3>Total: Rs <span id="total">0</span></h3>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bloom & Beyond. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Use localStorage for cart
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart') || '[]');
+    }
+
+    function setCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function renderCart() {
+  const cart = getCart();
+  const cartItems = document.getElementById('cart-items');
+  const subtotalEl = document.getElementById('subtotal');
+  const totalEl = document.getElementById('total');
+  const cartCount = document.getElementById('cart-count');
+  const delivery = 0; // removed delivery fee per request
+
+      cartItems.innerHTML = '';
+      let subtotal = 0;
+
+      // Helper to safely parse price values and format numbers
+      const parsePrice = (p) => {
+        if (typeof p === 'number' && Number.isFinite(p)) return p;
+        if (typeof p === 'string') {
+          const cleaned = p.replace(/[^0-9.]/g, '');
+          const num = cleaned ? Number(cleaned) : 0;
+          return Number.isFinite(num) ? num : 0;
+        }
+        return 0;
+      };
+
+  const fmt = (n) => Number.isFinite(n) ? n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 }) : '0';
+
+  // Debug output to help diagnose missing prices
+  console.debug('renderCart: raw cart', cart);
+
+      cart.forEach((item, index) => {
+        const priceNum = parsePrice(item.price);
+        const qtyNum = Number(item.quantity) || 0;
+        const totalPrice = priceNum * qtyNum;
+        subtotal += totalPrice;
+
+        console.debug(`item[${index}] raw price:`, item.price, 'parsed:', priceNum, 'qty:', qtyNum, 'total:', totalPrice);
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>Rs ${fmt(priceNum || 0)}</td>
+          <td>
+            <button class="quantity-btn decrease" data-index="${index}">-</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-btn increase" data-index="${index}">+</button>
+          </td>
+          <td>Rs ${fmt(totalPrice || 0)}</td>
+          <td><button class="remove-btn" data-index="${index}">X</button></td>
+        `;
+        cartItems.appendChild(row);
+      });
+
+      subtotalEl.textContent = fmt(subtotal);
+      totalEl.textContent = fmt(subtotal + delivery);
+      // cart-count may not exist on this page's header; guard its usage so the script doesn't throw
+      if (cartCount) {
+        cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+      }
+
+      // Attach event listeners using delegation so buttons added dynamically work
+      const cartBody = document.getElementById('cart-items');
+      cartBody.onclick = (e) => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+        const idx = btn.dataset.index;
+        if (btn.classList.contains('increase')) {
+          cart[idx].quantity++;
+          setCart(cart);
+          renderCart();
+        } else if (btn.classList.contains('decrease')) {
+          if (cart[idx].quantity > 1) {
+            cart[idx].quantity--;
+          } else {
+            cart.splice(idx, 1);
+          }
+          setCart(cart);
+          renderCart();
+        } else if (btn.classList.contains('remove-btn')) {
+          cart.splice(idx, 1);
+          setCart(cart);
+          renderCart();
+        }
+      };
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: inherit; /* inherit site font from Main.css for a modern look */
+  background: #fafafa;
+  color: #333;
+}
+
+
+.about-banner {
+  text-align: center;
+  padding: 60px 20px;
+  background: url('Images/About\ us.jpg') center/cover no-repeat;
+  color: #000000;
+}
+
+.about-banner h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.about-banner p {
+  font-size: 18px;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 40px;
+  align-items: center;
+  background: #fff;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  margin-top: 20px;
+  color: #4CAF50;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.team {
+  background: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.team h2 {
+  margin-bottom: 40px;
+  color: #4CAF50;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.member {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(-8px);
+}
+
+.member img {
+  width: 100%;
+  border-radius: 50%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.member h3 {
+  margin-top: 15px;
+  color: #333;
+}
+
+.member p {
+  color: #777;
+  font-size: 14px;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+nav a {
+  font-weight: 500;
+  opacity: 0.9;
+  text-decoration: none !important; /* force remove underline */
+  color: var(--ink);
+}
+

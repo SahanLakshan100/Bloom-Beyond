@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bloom & Beyond</title>
+    <meta name="description" content="Flora Store main page with featured bouquets and indoor plants" />
+
+    <link rel="stylesheet" href="index.css" />
+
+  
+  </head>
+  <body>
+   <header>
+  <div class="container nav">
+    <a class="brand" href="#">
+      <img src="Images/Beige Elegant and Beauty Flower Store Logo.png" alt="New Logo" style="width: 60px; height: 60px; border-radius:50%" />
+      <span>Bloom & Beyond</span>
+    </a>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="Flowers.html">Flowers</a></li>
+        <li><a href="Cakes.html">Cakes</a></li>
+        <li><a href="GiftHampers.html">Gift Hampers</a></li>
+        <li><a href="AboutUs.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+      <div class="actions">
+    <a href="Cart.html" class="btn" id="cartBtn" aria-label="Open Cart" style="display:inline-flex;align-items:center;gap:8px">
+    <img src="Images/shopping-cart-white-icon.png" alt="Cart" style="width:24px; height:24px;">
+    </a>
+   </div>
+  
+</header>
+
+
+    <!-- Hero -->
+    <div class="container hero">
+      <div>
+        <h1>Fresh flowers,Cakes and Gift Hampers</Canvas></h1>
+        <p class="lead">Same day delivery in your city. Hand tied bouquets and easy care greens for home and office. Friendly support with real time order updates.</p>
+        <div class="actions">
+          <a class="btn" href="Flowers.html">Shop now</a>
+          <a class="btn-ghost" href="AboutUs.html">Learn more</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>5000+</b><div>Orders delivered</div></div>
+          <div class="stat"><b>98%</b><div>Happy customers</div></div>
+          <div class="stat"><b>4.8</b><div>Average rating</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="Images/Huge Red.avif" alt="Bright mixed bouquet in a glass vase" />
+      </div>
+    </div>
+
+    <!-- Featured products -->
+    <section id="featured" class="container">
+      <div class="section-head">
+        <div>
+          <h2>Featured bouquets </h2>
+          <p>Hand picked seasonal best sellers ready to ship today</p>
+        </div>
+        <a class="btn-ghost" href="Flowers.html">View all</a>
+      </div>
+      <div class="grid">
+        <!-- Product 1 -->
+        <article class="card" aria-label="Hearts Stopper">
+          <img src="Images/Hearts Stopper.jpg" alt="Hearts Stopper" />
+          <div class="body">
+            <div class="pill">Best seller</div>
+            <h3 style="margin:0">Hearts Stopper</h3>
+            <p class="price">Rs 10 000</p>
+            <button class="btn add-to-cart" data-name="Hearts Stopper" data-price="Rs 10 000">Add to cart</button>
+          </div>
+        </article>
+        <!-- Product 2 -->
+        <article class="card" aria-label="Tulip Wispers">
+          <img src="Images/Tulip Wispers.jpg" alt="Tulip Wispers" />
+          <div class="body">
+            <div class="pill">New arrival</div>
+            <h3 style="margin:0">Tulip Wispers</h3>
+            <p class="price">Rs 4000</p>
+            <button class="btn add-to-cart" data-name="Tulip Wispers" data-price="Rs 4000">Add to cart</button>
+          </div>
+        </article>
+        <!-- Product 3 -->
+        <article class="card" aria-label="Sunflower Boque">
+          <img src="Images/Sunflower Boque.jpg" alt="Sunflower Boque" />
+          <div class="body">
+            <div class="pill">New arrival</div>
+            <h3 style="margin:0">Sunflower Boque</h3>
+            <p class="price">Rs 1500</p>
+            <button class="btn add-to-cart" data-name="Sunflower Boque" data-price="Rs 1500">Add to cart</button>
+          </div>
+        </article>
+        <!-- Product 4 -->
+        <article class="card" aria-label="Endless Care">
+          <img src="Images/Endless Care.jpg" alt="Endless Care" />
+          <div class="body">
+            <div class="pill">Trending</div>
+            <h3 style="margin:0">Endless Care</h3>
+            <p class="price">Rs 2500</p>
+            <button class="btn add-to-cart" data-name="Endless Care" data-price="Rs 2500">Add to cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container">
+      <div class="banner">
+        <div>
+          <h2>Care for nature and love for people</h2>
+          <p>We work with local growers and mindful farms. Flowers are cut to order and packed with care so they arrive fresh. Every plant comes with a simple guide. The team is here to help if you have any questions about light or watering.</p>
+          <div class="actions">
+            <a class="btn" href="Contact.html">Contact us</a>
+            <a class="btn-ghost" href="AboutUs.html">Read our story</a>
+          </div>
+        </div>
+        <img src="Images/Purple Love.webp" alt="Florist arranging flowers at a wooden table" />
+      </div>
+    </section>
+
+<!-- Review Form -->
+<section class="container">
+  <div class="newsletter" aria-label="Review form">
+    <h2 style="margin:0 0 4px">Leave a Review</h2>
+    <p class="lead">Share your thoughts and rate us</p>
+
+    <form id="reviewForm" style="display:grid; gap:12px">
+      <div class="field">
+        <input id="name" type="text" placeholder="Your Name" aria-label="Name" required />
+      </div>
+      <div class="field">
+        <input id="email" type="email" placeholder="Your Email" aria-label="Email" required />
+      </div>
+      <div class="field" style="display:flex; gap:6px; align-items:center;">
+        <label for="rating" style="font-weight:600">Rating</label>
+        <div id="starContainer" style="display:flex; gap:6px; cursor:pointer;">
+          ★★★★★
+        </div>
+      </div>
+      <div class="field" style="border-radius: var(--radius); padding: 10px; background:#f3f4f6">
+        <textarea id="message" placeholder="Write your review..." aria-label="Review message" rows="4" style="width:100%; border:0; background:transparent; outline:none; font-size:16px" required></textarea>
+      </div>
+      <button class="btn" type="submit">Send Review</button>
+    </form>
+
+    <p id="reviewMsg" class="lead" style="display:none; color:var(--brand)">Thank you for your review</p>
+
+    <!-- Display last 3 reviews -->
+    <div id="reviewList" style="margin-top:20px; display:grid; gap:14px"></div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("reviewForm");
+  const msg = document.getElementById("reviewMsg");
+  const reviewList = document.getElementById("reviewList");
+  const starContainer = document.getElementById("starContainer");
+
+  let selectedRating = 0;
+
+  // Create stars dynamically
+  starContainer.innerHTML = "";
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement("span");
+    star.textContent = "☆";
+    star.style.fontSize = "24px";
+    star.dataset.value = i;
+    star.addEventListener("click", () => {
+      selectedRating = i;
+      updateStars();
+    });
+    starContainer.appendChild(star);
+  }
+
+  function updateStars() {
+    [...starContainer.children].forEach(star => {
+      star.textContent = star.dataset.value <= selectedRating ? "★" : "☆";
+      star.style.color = star.dataset.value <= selectedRating ? "#fbbf24" : "#9ca3af";
+    });
+  }
+
+  function getReviews() {
+    return JSON.parse(localStorage.getItem("reviews") || "[]");
+  }
+
+  function setReviews(list) {
+    localStorage.setItem("reviews", JSON.stringify(list));
+  }
+
+  function renderReviews() {
+    let reviews = getReviews();
+    reviewList.innerHTML = "<h3>Recent Reviews</h3>";
+    reviews.slice(-3).reverse().forEach(rv => {
+      const card = document.createElement("div");
+      card.style.background = "#fff";
+      card.style.padding = "14px";
+      card.style.borderRadius = "12px";
+      card.style.boxShadow = "var(--shadow)";
+
+      let stars = "★".repeat(rv.rating) + "☆".repeat(5 - rv.rating);
+
+      card.innerHTML = `
+        <div style="color:#fbbf24; font-size:18px">${stars}</div>
+        <strong>${rv.name}</strong> <span style="color:var(--muted)">(${rv.email})</span><br>
+        ${rv.message}
+      `;
+      reviewList.appendChild(card);
+    });
+  }
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    if (selectedRating === 0) {
+      alert("Please select a star rating");
+      return;
+    }
+    let reviews = getReviews();
+    reviews.push({
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+      rating: selectedRating
+    });
+    setReviews(reviews);
+    msg.style.display = "block";
+    form.reset();
+    selectedRating = 0;
+    updateStars();
+    renderReviews();
+  });
+
+  renderReviews();
+</script>
+
+
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container foot">
+        <div>
+          <div class="brand" style="margin-bottom:10px">
+            <span>Bloom & Beyond</span>
+          </div>
+          <p>Fresh flowers and thoughtful gifts delivered with care. Open every day. Friendly support by chat and phone.</p>
+        </div>
+        <div>
+          <h3>Shop</h3>
+          <p><a href="Flowers.html">Flowers</a></p>
+          <p><a href="Cakes.html">Cakes</a></p>
+          <p><a href="GiftHampers.html">Gift Hampers</a></p>
+        </div>
+        <div>
+          <h3>Help</h3>
+          <p><a href="#">Delivery</a></p>
+          <p><a href="#">Returns</a></p>
+          <p><a href="#">Care guides</a></p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email Blooms&Beyond@gmail.com</p>
+          <p>Phone +94 76 752 0003</p>
+          <p>Outlets Colombo Nittambuwa Walasmulla</p>
+           <p>
+    <a href="https://www.facebook.com/share/1Cey5RAaYL/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+      <img src="Images/facebook-icon.png" alt="Facebook" style="width:24px; height:24px; vertical-align:middle; margin-right:5px;">
+      Follow us on Facebook
+    </a>
+    <a href="https://wa.me/+94767520003" target="_blank" aria-label="Whatsapp">
+      <img src="Images/Whatsapp logo.jpeg" alt="Facebook" style="width:24px; height:24px; vertical-align:middle; margin-right:5px;">
+      Contact us on Whatsapp
+    </a>
+
+  </p>
+        </div>
+      </div>
+     
+</div>
+      <div class="copyright">
+        © <span id="year"></span> Bloom & Beyond. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      // Simple cart demo
+      const cart = [];
+      function cleanPrice(p) {
+        if (typeof p === 'number') return p;
+        if (!p) return 0;
+        const cleaned = String(p).replace(/[^0-9.]/g, '');
+        return cleaned ? Number(cleaned) : 0;
+      }
+
+      function renderCart() {
+        alert(cart.length ? cart.map(i => `${i.name} x${i.qty} Rs ${i.price}`).join('\n') : 'Your cart is empty');
+      }
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const name = btn.dataset.name;
+          const price = cleanPrice(btn.dataset.price);
+          const item = cart.find(i => i.name === name);
+          if (item) { item.qty += 1; } else { cart.push({ name, price, qty: 1 }); }
+          btn.textContent = 'Added';
+          setTimeout(() => btn.textContent = 'Add to cart', 1000);
+        });
+      });
+      document.getElementById('cartBtn').addEventListener('click', renderCart);
+
+      // Fake search
+      document.getElementById('searchBtn').addEventListener('click', () => {
+        const q = prompt('Type a flower or plant');
+        if (q) alert(`Showing results for ${q}`);
+      });
+
+      // Newsletter
+      document.getElementById('subscribeBtn').addEventListener('click', () => {
+        const email = document.getElementById('email').value.trim();
+        const msg = document.getElementById('subMsg');
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          msg.style.display = 'block';
+        } else {
+          alert('Please enter a valid email');
+        }
+      });
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

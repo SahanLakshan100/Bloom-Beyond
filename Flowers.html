@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom & Beyond | Flowers</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="Flowers.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#">
+          <img src="Images/Beige Elegant and Beauty Flower Store Logo.png" alt="New Logo" style="width: 60px; height: 60px; border-radius:50%" />
+          <span>Bloom & Beyond</span>
+        </a>
+        <nav aria-label="Main Navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Cakes.html">Cakes</a></li>
+            <li><a href="GiftHampers.html">Gift Hampers</a></li>
+            <li><a href="AboutUs.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+           <div class="actions">
+    <a href="Cart.html" class="btn" id="cartBtn" aria-label="Open Cart" style="display:inline-flex;align-items:center;gap:8px">
+    <img src="Images/shopping-cart-white-icon.png" alt="Cart" style="width:24px; height:24px;">
+    </a>
+       </div>
+    </header>
+
+  <section class="shop-banner container">
+    <h1>Our Flower Collection</h1>
+    <p>Beautiful flowers for every occasion</p>
+  </section>
+
+  <section class="product-grid container">
+    <div class="product-card">
+      <img src="Images/Sweet Wishes.jpg" alt="Sweet Wishes">
+      <h3>Sweet Wishes</h3>
+      <p>Rs 3000</p>
+      <button class="add-to-cart" data-name="Sweet Wishes" data-price="Rs 3000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Tulip Wispers.jpg" alt="Tulip Wispers">
+      <h3>Tulip Wispers</h3>
+      <p>Rs 4000</p>
+      <button class="add-to-cart" data-name="Tulip Wispers" data-price="Rs 4000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Endless Care.jpg" alt="Endless Care">
+      <h3>Endless Care</h3>
+      <p>Rs 2500</p>
+      <button class="add-to-cart" data-name="Endless Care" data-price="Rs 2500">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Blossom Bliss.jpeg" alt="Blossom Bliss">
+      <h3>Blossom Bliss</h3>
+      <p>Rs 4000</p>
+      <button class="add-to-cart" data-name="Blossom Bliss" data-price="Rs 4000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Lavander Skies.jpg" alt="Lavander Skies">
+      <h3>Lavander Skies</h3>
+      <p>Rs 4000</p>
+      <button class="add-to-cart" data-name="Lavander Skies" data-price="Rs 4000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Purple Love.webp" alt="Purple Love">
+      <h3>Purple Love</h3>
+      <p>Rs 4000</p>
+      <button class="add-to-cart" data-name="Purple Love" data-price="Rs 4000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Ruby Delight.jpg" alt="Ruby Delight">
+      <h3>Ruby Delight</h3>
+      <p>Rs 4000</p>
+      <button class="add-to-cart" data-name="Ruby Delight" data-price="Rs 4000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/8 Flower.jpg" alt="Wild WhiteBoque">
+      <h3>Wild WhiteBoque</h3>
+      <p>Rs 4000</p>
+      <button class="add-to-cart" data-name="Wild WhiteBoque" data-price="Rs 4000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/9 flower.jpg" alt="Pink Rose Boque">
+      <h3>Pink Rose Boque</h3>
+      <p>Rs 2000</p>
+      <button class="add-to-cart" data-name="Pink Rose Boque" data-price="Rs 2000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Sunflower Boque.jpg" alt="Sunflower Boque">
+      <h3>Sunflower Boque</h3>
+      <p>Rs 1500</p>
+      <button class="add-to-cart" data-name="Sunflower Boque" data-price="Rs 1500">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Huge Red.avif" alt="Huge Red">
+      <h3>Huge Red</h3>
+      <p>Rs 10000</p>
+      <button class="add-to-cart" data-name="Huge Red" data-price="Rs 10000">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Images/Hearts Stopper.jpg" alt="Hearts Stopper">
+      <h3>Hearts Stopper</h3>
+      <p>Rs 10000</p>
+      <button class="add-to-cart" data-name="Hearts Stopper" data-price="Rs 10000">Add to Cart</button>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Bloom & Beyond. All Rights Reserved.</p>
+  </footer>
+  <script>
+  // Debug: log number of product cards found
+  console.log('Product cards:', document.querySelectorAll('.product-card').length);
+    // Cart logic using localStorage
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart') || '[]');
+    }
+    function setCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    function cleanPrice(p) {
+      if (typeof p === 'number') return p;
+      if (!p) return 0;
+      const cleaned = String(p).replace(/[^0-9.]/g, '');
+      return cleaned ? Number(cleaned) : 0;
+    }
+
+    function addToCart(name, price) {
+      let cart = getCart();
+      const numericPrice = cleanPrice(price);
+      const idx = cart.findIndex(item => item.name === name);
+      if (idx > -1) {
+        cart[idx].quantity += 1;
+      } else {
+        cart.push({ name, price: numericPrice, quantity: 1 });
+      }
+      setCart(cart);
+      alert('Added to cart!');
+    }
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', function() {
+        addToCart(this.dataset.name, this.dataset.price);
+      });
+    });
+  </script>
+  </body>
+</html>
